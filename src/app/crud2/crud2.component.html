@@ -1,0 +1,41 @@
+<div>
+    <h2>Create User</h2>
+    <form (submit)="addUser()">
+      <input type="text" [(ngModel)]="newUser.name" name="name" placeholder="Name" required />
+      <input type="email" [(ngModel)]="newUser.email" name="email" placeholder="Email" required />
+      <input type="password" [(ngModel)]="newUser.password" name="password" placeholder="Password" required />
+      <button type="submit">Add User</button>
+    </form>
+  
+    <h2>Users List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <button (click)="editUser(user)">Edit</button>
+            <button (click)="deleteUser(user._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="isEditMode">
+      <h2>Edit User</h2>
+      <form (submit)="updateUser()">
+        <input type="text" [(ngModel)]="selectedUser.name" name="name" placeholder="Name" required />
+        <input type="email" [(ngModel)]="selectedUser.email" name="email" placeholder="Email" required />
+        <input type="password" [(ngModel)]="selectedUser.password" name="password" placeholder="Password" required />
+        <button type="submit">Update User</button>
+      </form>
+    </div>
+  </div>
+  
