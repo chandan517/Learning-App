@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { increment, decrement, reset } from '../store/actions/counter.actions';
 import { Observable } from 'rxjs';
-import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 
 @Component({
@@ -27,6 +27,7 @@ export class NgrxComponent {
   }
 
   reset() {
-    this.store.dispatch(reset()); 
+    this.store.dispatch(reset());   
   }
+  
 }

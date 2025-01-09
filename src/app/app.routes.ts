@@ -5,6 +5,7 @@ import { Crud3Component } from './crud3/crud3.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { NgrxComponent } from './ngrx/ngrx.component';
+import { TranslateComponent } from './translate/translate.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'crud2',pathMatch:'full'},
@@ -14,4 +15,5 @@ export const routes: Routes = [
     {path:'parent',component:ParentComponent},
     {path:'child',component:ChildComponent},
     {path:'ngrx',component:NgrxComponent},
+    {path:'translate',component:TranslateComponent},
 ];

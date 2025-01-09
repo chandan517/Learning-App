@@ -9,16 +9,11 @@ import { ChildComponent } from '../child/child.component';
 })
 export class ParentComponent {
   parentdata: string = "hello from parent";
-message:string = "";
+  message: string = "";
 
- receivemsg(data:string){
-  console.log('Received from child: ', data);
-  this.message = data;
-
-
- }
-
-
-
+  receivemsg(data: string) {
+    console.log('Received from child: ', data);
+    this.message = data;
+  }
 
 }
